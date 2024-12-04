@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="facebook.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Philippines Spot</h1>
+            <p>Travel is the only purchase that enriches you in ways beyond material wealth.</p>
+        </div>
+        <div class="right-panel">
+            <h2>Welcome</h2>
+            <form action="login.php" method="POST">
+                <div class="input-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+                <div class="social-login">
+                    <p>Or Login with:</p>
+                    <button type="button" id="google" class="social-button google">Google</button>
+                    <button type="button" class="social-button facebook" onclick="checkLoginState();">Facebook</button>
+                </div>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="signup.html" id="signup-link">Sign Up</a></p>
+                    <p><a href="#" id="forgot-password-link">Forgot Password?</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="forgot-password-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>Forgot Password</h2>
+            <form action="forgot_password.php" method="POST">
+                <div class="input-group">
+                    <label for="forgot-email">Email ID</label>
+                    <input type="email" id="forgot-email" name="email" required>
+                </div>
+                <button type="submit" class="login-button">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="signup-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>Sign Up</h2>
+            <form action="signup.php" method="POST">
+                <div class="input-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="ForgotPassword.js"></script>
+    <script src="google.js" defer type="module"></script>
+</body>
+</html>
